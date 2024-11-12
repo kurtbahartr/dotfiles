@@ -18,6 +18,35 @@ https://github.com/dianaw353/dotfiles/releases/tag/V1.1.6
 - Fix some keybind symbols in the keybind guide.
 - Fix the fullscreen keybind to involve Shift
 
+<details>
+ <summary>Features in development downstream</summary>
+
+- Add support for touchpad toggle key on laptops using Microsoft Precision Touchpad standard - Credits to the r/hyprland Reddit community. (#49)
+<details>
+ <summary>Important notes for this change</summary>
+
+- The implementation is pretty much barebones and needs to be improved.
+- The support was tested only for one laptop and needs more laptops to be tested this.
+  - Any recent laptop with a touchpad that requires no specific drivers on Windows should have support for this standard.
+  - This support only aims laptops with touchpad **toggle** key. If your laptop has specific touchpad on and off keys, which is very unlikely, one of them should return the same keycombo.
+  - If your laptop has no toggle key but a gesture (E.g. Double tap on top left corner of the touchpad), it should already work OOTB and this change has nothing to do with that.
+-  When reporting a related issue, please do the following and send outputs;
+  - The output from `sudo showkey`.
+    - Run the command, invoke touchpad lock (such as Fn+Esc on Casper Excalibur G770 series laptops) and wait for 10 seconds for the command to exit.
+  - The notification posted if any. Possible values are;
+    - Touchpad enabled.
+    - Touchpad disabled.
+    - Touchpad could not be enabled.
+    - Touchpad could not be disabled.
+  - The output from `hyprctl devices`, more specifically the `mice` section.
+  - If `hyprctl devices | grep touchpad` returns a device name, try the following commands and include the results in your report;
+    - `hyprctl keyword device\[<the output from the previous command>\]:enabled false` - Should disable the touchpad.
+    - `hyprctl keyword device\[<the output from the previous command>\]:enabled false` - Should enable the touchpad.
+- The script posts NORMAL notifications and will clutter your notification panel over time. If you can create an OSD widget for this, contributions are welcome.
+
+</details>
+</details>
+
 Version 1.1.5
 https://github.com/dianaw353/dotfiles/releases/tag/V1.1.5
 ---------------------------------------------------------
