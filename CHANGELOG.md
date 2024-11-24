@@ -1,3 +1,8 @@
+Version 1.1.9-rc1
+https://github.com/dianaw353/dotfiles/releases/tag/V1.1.9-rc1
+-------------------------------------------------------------
+- This is a test release to see if RC releases work just fine with automation.
+
 Version 1.1.8
 https://github.com/dianaw353/dotfiles/releases/tag/V1.1.8
 ---------------------------------------------------------
